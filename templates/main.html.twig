@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="d-flex  justify-content-center">
+            {{ form(form, { 'attr': {'class': 'form-inline'} }) }}
+        </div>
+        <div>
+            {% embed "message.html.twig" %}{% endembed %}
+            {% if data is defined %}
+                {% embed "main/table.html.twig" %}{% endembed %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
